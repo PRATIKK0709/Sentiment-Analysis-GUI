@@ -21,15 +21,15 @@ A simple PyQt5-based GUI application for sentiment analysis using the VADER sent
 ## Installation
 
 1. Clone the repository:
-
-   ```bash
+```
    git clone https://github.com/SysketSK/Sentiment-Analysis-GUI.git
    cd Sentiment-Analysis-GUI
+```
 2. Install the required dependencies:
-
-   ```bash
+```
    pip install PyQt5 vaderSentiment
    pip install vaderSentiment
+```
 
 ##Usage
 
