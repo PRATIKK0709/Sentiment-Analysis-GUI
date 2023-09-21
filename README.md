@@ -74,8 +74,8 @@ app.setStyleSheet("""
 ## Contributing
 Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
 
-Fork the repository. <br>
-Create a new branch for your feature or bug fix.<br>
-Make your changes and commit them.<br>
-Push your changes to your fork.<br>
-Create a pull request, describing your changes in detail and explaining why they are needed.
+1) Fork the repository. <br>
+2) Create a new branch for your feature or bug fix.<br>
+3) Make your changes and commit them.<br>
+4) Push your changes to your fork.<br>
+5) Create a pull request, describing your changes in detail and explaining why they are needed.
