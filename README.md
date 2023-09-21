@@ -43,3 +43,30 @@ python sentiment_analysis_app.py
 3) Click the "Analyze Sentiment" button to see the sentiment analysis results.
 
 4) Use the "Clear Text" button to clear the input and results.
+
+## Customization
+
+You can customize the application's appearance by modifying the CSS styles in the sentiment_analysis_app.py file.
+```
+# Apply custom style
+app.setStyleSheet("""
+    QMainWindow {
+        background-color: #f0f0f0;
+    }
+    QTextEdit {
+        background-color: #ffffff;
+        font-size: 16px;
+    }
+    QPushButton {
+        background-color: #0080FF;
+        color: #ffffff;
+        font-size: 16px;
+    }
+    QPushButton:hover {
+        background-color: #0055CC;
+    }
+    QLabel {
+        font-size: 20px;
+    }
+""")
+```
