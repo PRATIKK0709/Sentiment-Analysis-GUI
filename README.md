@@ -16,17 +16,7 @@ A simple PyQt5-based GUI application for sentiment analysis using the VADER sent
 - [Customization](#customization)
 - [Contributing](#contributing)
 
-## Features
 
-- Analyze the sentiment of text input using the VADER sentiment analysis library.
-- Display sentiment labels (Positive, Negative, Neutral) and compound scores.
-- Clear input and result labels with the "Clear Text" button.
-
-## Demo
-
-![Demo](demo.gif)
-
-[See the demo video](demo/demo.mp4)
 
 ## Installation
 
