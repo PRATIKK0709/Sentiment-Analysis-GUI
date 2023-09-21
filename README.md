@@ -33,8 +33,13 @@ A simple PyQt5-based GUI application for sentiment analysis using the VADER sent
 
 ## Usage
 
-Run the application
+1) Run the application
 
 ```
 python sentiment_analysis_app.py
 ```
+2) Enter the text you want to analyze in the text entry field.
+
+3) Click the "Analyze Sentiment" button to see the sentiment analysis results.
+
+4) Use the "Clear Text" button to clear the input and results.
