@@ -31,7 +31,7 @@ A simple PyQt5-based GUI application for sentiment analysis using the VADER sent
    pip install vaderSentiment
 ```
 
-##Usage
+## Usage
 
 Run the application
 
