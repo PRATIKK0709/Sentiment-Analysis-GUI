@@ -2,10 +2,9 @@
 
 # Sentiment Analysis Tool
 
-![GitHub repo size](https://img.shields.io/github/repo-size/YourUsername/YourRepositoryName)
-![GitHub stars](https://img.shields.io/github/stars/YourUsername/YourRepositoryName?style=social)
-![GitHub forks](https://img.shields.io/github/forks/YourUsername/YourRepositoryName?style=social)
-![GitHub license](https://img.shields.io/github/license/YourUsername/YourRepositoryName)
+![GitHub repo size](https://img.shields.io/github/repo-size/SysketSK/Sentiment-Analysis-GUI)
+![GitHub stars](https://img.shields.io/github/stars/SysketSK/Sentiment-Analysis-GUI?style=social)
+
 
 A simple PyQt5-based GUI application for sentiment analysis using the VADER sentiment analysis tool.
 
