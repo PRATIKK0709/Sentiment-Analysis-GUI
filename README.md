@@ -70,3 +70,12 @@ app.setStyleSheet("""
     }
 """)
 ```
+
+## Contributing
+Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
+
+Fork the repository.
+Create a new branch for your feature or bug fix.
+Make your changes and commit them.
+Push your changes to your fork.
+Create a pull request, describing your changes in detail and explaining why they are needed.
