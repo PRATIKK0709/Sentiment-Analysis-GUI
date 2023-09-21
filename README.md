@@ -10,13 +10,11 @@ A simple PyQt5-based GUI application for sentiment analysis using the VADER sent
 
 ## Table of Contents
 
-- [Features](#features)
-- [Demo](#demo)
+
 - [Installation](#installation)
 - [Usage](#usage)
 - [Customization](#customization)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
