@@ -23,5 +23,5 @@ A simple PyQt5-based GUI application for sentiment analysis using the VADER sent
 1. Clone the repository:
 
    ```bash
-   git clone https:/github.com/Sysket
+   git clone https://github.com/SysketSK/Sentiment-Analysis-GUI.git
    cd YourRepositoryName
