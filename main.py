@@ -8,7 +8,6 @@ class SentimentAnalysisApp(QMainWindow):
         super().__init__()
         self.init_ui()
 
-
     def init_ui(self):
         self.setWindowTitle("Sentiment Analysis Tool")
         self.setGeometry(100, 100, 600, 400)
@@ -89,8 +88,12 @@ class SentimentAnalysisApp(QMainWindow):
         with open(file_path, 'r', encoding='utf-8') as file:
             lines = file.readlines()
             for line in lines:
-                word, score = line.strip().split('\t')
-                custom_lexicon[word] = float(score)
+                parts = line.strip().split('\t')
+                if len(parts) == 2:
+                    word, score = parts
+                    custom_lexicon[word] = float(score)
+                else:
+                    print(f"Ignoring line: {line} (Format: word<TAB>score)")
         return custom_lexicon
 
 def main():
