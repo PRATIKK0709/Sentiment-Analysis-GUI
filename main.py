@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QTextEdit, QPushButton, QLabel, QVBoxLayout, QWidget, QHBoxLayout
+from PyQt5.QtWidgets import QApplication, QMainWindow, QTextEdit, QPushButton, QLabel, QVBoxLayout, QWidget, QHBoxLayout, QFileDialog
 from PyQt5.QtGui import QFont
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
@@ -7,6 +7,7 @@ class SentimentAnalysisApp(QMainWindow):
     def __init__(self):
         super().__init__()
         self.init_ui()
+
 
     def init_ui(self):
         self.setWindowTitle("Sentiment Analysis Tool")
@@ -16,6 +17,7 @@ class SentimentAnalysisApp(QMainWindow):
         self.text_entry = QTextEdit(self)
         self.analyze_button = QPushButton("Analyze Sentiment", self)
         self.clear_button = QPushButton("Clear Text", self)
+        self.load_dict_button = QPushButton("Load Custom Dictionary", self)
         self.result_label = QLabel(self)
         self.score_label = QLabel(self)
 
@@ -32,6 +34,7 @@ class SentimentAnalysisApp(QMainWindow):
         button_layout = QHBoxLayout()
         button_layout.addWidget(self.analyze_button)
         button_layout.addWidget(self.clear_button)
+        button_layout.addWidget(self.load_dict_button)
         layout.addLayout(button_layout)
 
         layout.addWidget(self.result_label)
@@ -44,11 +47,14 @@ class SentimentAnalysisApp(QMainWindow):
         # Connect button signals to functions
         self.analyze_button.clicked.connect(self.analyze_sentiment)
         self.clear_button.clicked.connect(self.clear_text)
+        self.load_dict_button.clicked.connect(self.load_custom_sentiment_dictionary)
+
+        # Create the sentiment analyzer
+        self.analyzer = SentimentIntensityAnalyzer()
 
     def analyze_sentiment(self):
         text = self.text_entry.toPlainText()
-        analyzer = SentimentIntensityAnalyzer()
-        sentiment_scores = analyzer.polarity_scores(text)
+        sentiment_scores = self.analyzer.polarity_scores(text)
 
         compound_score = sentiment_scores['compound']
         sentiment_label = self.get_sentiment_label(compound_score)
@@ -69,10 +75,28 @@ class SentimentAnalysisApp(QMainWindow):
         else:
             return "Neutral"
 
+    def load_custom_sentiment_dictionary(self):
+        options = QFileDialog.Options()
+        options |= QFileDialog.ReadOnly
+        file_path, _ = QFileDialog.getOpenFileName(self, "Load Custom Sentiment Dictionary", "", "Text Files (*.txt);;All Files (*)", options=options)
+
+        if file_path:
+            self.analyzer.lexicon.update(self.load_custom_lexicon(file_path))
+            self.analyze_sentiment()
+
+    def load_custom_lexicon(self, file_path):
+        custom_lexicon = {}
+        with open(file_path, 'r', encoding='utf-8') as file:
+            lines = file.readlines()
+            for line in lines:
+                word, score = line.strip().split('\t')
+                custom_lexicon[word] = float(score)
+        return custom_lexicon
+
 def main():
     app = QApplication(sys.argv)
     window = SentimentAnalysisApp()
-    
+
     # Apply custom style
     app.setStyleSheet("""
         QMainWindow {
